@@ -15,3 +15,7 @@ func _physics_process(delta: float) -> void:
 	velocity = dir * move_speed
 	
 	move_and_slide()
+	
+	facing_angle = Vector2(input.y, input.x).angle()
+	
+	model.rotation.y = facing_angle
