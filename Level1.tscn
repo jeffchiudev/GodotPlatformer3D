@@ -61,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5542, 1, -2.53608)
 [node name="PlatformLarge12" parent="." instance=ExtResource("1_kyxg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5542, 1, -2.53608)
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
 script = ExtResource("2_cove1")
 
 [node name="Model" type="MeshInstance3D" parent="Player"]
@@ -96,3 +96,5 @@ surface_material_override/1 = SubResource("StandardMaterial3D_mlbie")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00376892, 0.497832, -6.10352e-05)
 shape = SubResource("BoxShape3D_mlbie")
+
+[connection signal="body_entered" from="Enemy" to="Enemy" method="_on_body_entered"]
