@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckcus5mqe4t38"]
+[gd_scene load_steps=5 format=3 uid="uid://ckcus5mqe4t38"]
 
 [ext_resource type="PackedScene" uid="uid://cddntn5mqpcif" path="res://Platforms/PlatformLarge.tscn" id="1_kyxg0"]
 [ext_resource type="PackedScene" uid="uid://b5s0hbwkcqggs" path="res://Models/Player.tscn" id="2_cove1"]
 [ext_resource type="PackedScene" uid="uid://yqkb36jxmh8" path="res://Models/Enemy.tscn" id="3_dwyiq"]
-[ext_resource type="Script" uid="uid://y6w412yvmje2" path="res://Spikes.gd" id="4_dn5ey"]
-[ext_resource type="ArrayMesh" uid="uid://ckhit4w6oius4" path="res://Models/spikesLarge.obj" id="4_dwyiq"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lmyl5"]
-size = Vector3(0.788086, 0.400635, 0.805725)
+[ext_resource type="PackedScene" uid="uid://cp0mnvgebn8r6" path="res://Models/Spikes.tscn" id="4_dwyiq"]
 
 [node name="Main" type="Node3D"]
 
@@ -61,17 +57,8 @@ move_dir = Vector3(0, 0, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1726, -0.52994, -0.575457)
 move_dir = Vector3(0, 3, -3)
 
-[node name="Spikes" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.40972, 0, 0)
-script = ExtResource("4_dn5ey")
+[node name="Spikes" parent="." instance=ExtResource("4_dwyiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.94483, 1.01302, -1.28023)
 
-[node name="Model" type="MeshInstance3D" parent="Spikes"]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
-mesh = ExtResource("4_dwyiq")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Spikes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00146484, 0.181274, -0.0111389)
-shape = SubResource("BoxShape3D_lmyl5")
-
-[connection signal="body_entered" from="Spikes" to="Spikes" method="_on_body_entered"]
+[node name="Spikes2" parent="." instance=ExtResource("4_dwyiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.94483, 1.01302, -3.68709)
