@@ -10,3 +10,12 @@ var t : float = 0.0 #timer for sine wave, keeps track of elapsed time
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	rotate(Vector3.UP, spin_speed * delta)
+	
+	t += delta
+	var d = (sin(t * bob_speed) + 1) / 2
+	global_position.y = start_y + (d * bob_height)
+	
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		body.add_score(1)
+		queue_free()
