@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckcus5mqe4t38"]
 
 [ext_resource type="PackedScene" uid="uid://cddntn5mqpcif" path="res://Platforms/PlatformLarge.tscn" id="1_kyxg0"]
-[ext_resource type="PackedScene" uid="uid://b5s0hbwkcqggs" path="res://Models/Player.tscn" id="2_cove1"]
-[ext_resource type="PackedScene" uid="uid://yqkb36jxmh8" path="res://Models/Enemy.tscn" id="3_dwyiq"]
-[ext_resource type="PackedScene" uid="uid://cp0mnvgebn8r6" path="res://Models/Spikes.tscn" id="4_dwyiq"]
-[ext_resource type="PackedScene" uid="uid://dagqdosxytqdm" path="res://Models/Coin.tscn" id="5_dn5ey"]
-[ext_resource type="PackedScene" uid="uid://g078k6tw3vds" path="res://Models/EndFlag.tscn" id="6_lmyl5"]
+[ext_resource type="PackedScene" uid="uid://b5s0hbwkcqggs" path="res://Player.tscn" id="2_cove1"]
+[ext_resource type="PackedScene" uid="uid://yqkb36jxmh8" path="res://Enemy.tscn" id="3_dwyiq"]
+[ext_resource type="PackedScene" uid="uid://cp0mnvgebn8r6" path="res://Spikes.tscn" id="4_dwyiq"]
+[ext_resource type="PackedScene" uid="uid://dagqdosxytqdm" path="res://Coin.tscn" id="5_dn5ey"]
+[ext_resource type="PackedScene" uid="uid://g078k6tw3vds" path="res://EndFlag.tscn" id="6_lmyl5"]
 
 [sub_resource type="Environment" id="Environment_lmyl5"]
 background_mode = 1
@@ -95,3 +95,4 @@ environment = SubResource("Environment_lmyl5")
 
 [node name="EndFlag" parent="." instance=ExtResource("6_lmyl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6429, 2.00887, -2.49575)
+next_scene = "uid://cccayc7148rad"
